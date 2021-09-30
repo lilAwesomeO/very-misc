@@ -1,0 +1,66 @@
+<html>
+<head>
+
+</head>
+
+<style>
+	body{background:#1b1b1b;}
+	span {width:5vw;height:5vw; border:1vh solid#cbff11; border-radius:1vh; background:magenta;}	
+	div {width:100%; height:10vw; background:#bb86fc}
+	
+	.sentrer-vertikalt{
+			/*
+				- align-items sentrerer child-HTML-elementers 
+					posisjon i høyden
+				- må ha display:flex for å virke
+			*/
+		display:flex;
+		align-content:center;
+	}
+
+	
+	.sentrer-horisontalt{	
+		/*
+			- justify-content sentrerer child-HTML-elementers 
+				posisjon langs horisonten
+			- istedet for center; "space-around", "space-between"
+			- må ha display:flex for å virke
+		*/
+		display:flex;
+		justify-content: center;
+	}
+
+	.sentrer-til-høyre {
+		display:flex;
+		justify-content: right;
+	}
+	
+	.sentrer-til-ventstre {
+		display:flex;
+		justify-content: left;
+	}
+</style>
+
+<body>	
+	<div class="sentrer-horisontalt sentrer-vertikalt">		
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<hr>
+	<br>
+	
+	<div class="sentrer-vertikalt sentrer-horisontalt">
+		<section class="sentrer-til-høyre">
+			<span style="border-color:red"></span>
+		</section>
+
+		<section class="sentrer-til-ventstre">
+			<span style="border-color:darkblue"></span>
+		</section>	
+	</div>
+	<hr>
+	<br>
+
+</body>
+</html>
