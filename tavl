@@ -1,0 +1,29 @@
+#!/bin/env bash
+
+if [ $# -lt  1 ]
+then
+	echo "[error]: 1 arg, monsieur *tips fedora*"
+	exit 1;
+else
+
+CHAR="~"
+CHAR_DOWN="~"
+MIDLINE_VAR="+#+"
+DOWN_FLOOR=$( printf '+#+')
+SPACED_COLS="+#+"
+	
+	for (( i =-2; i <${#1}; i++ )); do
+		DOWN_FLOOR+=$CHAR_DOWN
+		MIDLINE_VAR+=$CHAR
+		SPACED_COLS+=$(printf " ")
+	done
+	
+	SPACED_COLS+=$(printf "|\n")
+	MIDLINE_VAR+=$(printf '+#+\n' )
+	DOWN_FLOOR+=$(printf "%s\n" $( printf  '+#+'))
+	echo "$MIDLINE_VAR"
+#	echo "$SPACED_COLS"
+echo "|#| ${1} |#|"
+#	echo "$SPACED_COLS"
+	echo "$DOWN_FLOOR"	
+fi
